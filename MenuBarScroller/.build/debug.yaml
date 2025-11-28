@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "MenuBarScroller-arm64-apple-macosx26.0-debug.exe": ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe>"]
+  "MenuBarScroller-arm64-apple-macosx26.0-debug.module": ["<MenuBarScroller-arm64-apple-macosx26.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe>","<MenuBarScroller-arm64-apple-macosx26.0-debug.module>"]
+  "test": ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe>","<MenuBarScroller-arm64-apple-macosx26.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller":
+    is-mutated: true
+commands:
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller-entitlement.plist"]
+    description: "Write auxiliary file /Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller-entitlement.plist"
+
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/MenuBarManager.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/OverlayView.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/main.swift"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/sources"]
+    description: "Write auxiliary file /Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/sources"
+
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swift.o"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.product/Objects.LinkFileList"
+
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<MenuBarScroller-arm64-apple-macosx26.0-debug.exe>":
+    tool: phony
+    inputs: ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    outputs: ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe>"]
+
+  "<MenuBarScroller-arm64-apple-macosx26.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/Modules/MenuBarScroller.swiftmodule"]
+    outputs: ["<MenuBarScroller-arm64-apple-macosx26.0-debug.module>"]
+
+  "C.MenuBarScroller-arm64-apple-macosx26.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.product/Objects.LinkFileList"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/MenuBarScroller"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug","-o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller","-module-name","MenuBarScroller","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_MenuBarScroller_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/Modules/MenuBarScroller.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.MenuBarScroller-arm64-apple-macosx26.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller-entitlement.plist"]
+    outputs: ["<MenuBarScroller-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/MenuBarScroller"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller-entitlement.plist","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller"]
+
+  "C.MenuBarScroller-arm64-apple-macosx26.0-debug.module":
+    tool: shell
+    inputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/MenuBarManager.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/OverlayView.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/main.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/sources"]
+    outputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swift.o","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/Modules/MenuBarScroller.swiftmodule"]
+    description: "Compiling Swift Module 'MenuBarScroller' (3 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","MenuBarScroller","-emit-dependencies","-emit-module","-emit-module-path","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/Modules/MenuBarScroller.swiftmodule","-output-file-map","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/output-file-map.json","-incremental","-c","@/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/sources","-I","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","MenuBarScroller_main","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","menubarscroller"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Package.swift","/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

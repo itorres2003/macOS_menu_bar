@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/master.swiftdeps"
+  },
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/MenuBarManager.swift": {
+    "dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.d",
+    "object": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swift.o",
+    "swiftmodule": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.swiftdeps",
+    "diagnostics": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/MenuBarManager.dia"
+  },
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/OverlayView.swift": {
+    "dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.d",
+    "object": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swift.o",
+    "swiftmodule": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView~partial.swiftmodule",
+    "swift-dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.swiftdeps",
+    "diagnostics": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/OverlayView.dia"
+  },
+  "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/Sources/main.swift": {
+    "dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.d",
+    "object": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swift.o",
+    "swiftmodule": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.swiftdeps",
+    "diagnostics": "/Users/ibrahimtorres/repos/macOS_menu_bar/MenuBarScroller/.build/arm64-apple-macosx/debug/MenuBarScroller.build/main.dia"
+  }
+}
